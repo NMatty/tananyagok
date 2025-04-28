@@ -1,0 +1,20 @@
+NĂŠzettĂĄblĂĄk hasznĂĄlata
+CREATE VIEW nĂŠv AS (lekĂŠrdezĂŠs, amibĹl lĂŠtrehozzuk a nĂŠzettĂĄbla mezĹit);
+
+A nĂŠzet lĂŠtrehozĂĄsa sorĂĄn a megadott lekĂŠrdezĂŠs eredmĂŠnyhalmazĂĄt egy tĂĄblakĂŠnt kapjuk meg.
+MegszorĂ­tĂĄs:
+- beszĂşrĂĄs, tĂśrlĂŠs, mĂłdosĂ­tĂĄs mĹąvelet nem vĂŠgezhetĹ (vagy csak korlĂĄtozottan)
+A fenti mĹąveletek nem lehetsĂŠgesek, ha a nĂŠzettĂĄbla definĂ­ciĂłjĂĄban szereplĹ lekĂŠrdezĂŠs
+1) tartalmaz ĂśsszekapcsolĂĄst
+2) tartalmaz csoportosĂ­tĂĄst
+3) szĂĄrmaztatott ĂŠrtĂŠket (egy mezĹbĹl szĂĄmĂ­tott ĂŠrtĂŠk pĂŠldĂĄul nettĂł ĂŠs ĂĄfa segĂ­tsĂŠgĂŠvel kifejezett bruttĂł ĂĄr)
+4) szerepel a DISTINCT
+5) a nĂŠzettĂĄblĂĄban nem lehet egyĂŠrtelmĹąen meghatĂĄrozni egy fizikai rekordot (pl. nem tartalmazza egyik tĂĄbla kulcsĂĄt sem)
+
+MIKOR hasznos?
+1) gyakran hasznĂĄlt lekĂŠrdezĂŠseknĂŠl
+2) a lekĂŠrdezĂŠs eredmĂŠnyĂŠt mĂĄs tĂĄblĂĄval akarjuk Ăśsszekapcsolni ĂŠs Ă­gy kevesebb az ĂśsszekapcsolandĂł adathalmaz, mivel arra is szĹąrhetĂźnk
+3) jogosultsĂĄgi szintek beĂĄllĂ­tĂĄsĂĄhoz (pl. admin hozzĂĄfĂŠr a fizikai tĂĄblĂĄhoz, de a "lĂĄtogatĂłk" csak a nĂŠzettĂĄblĂĄkhoz)
+4) adatrejtĂŠs (pl. dolgozĂłi nyilvĂĄntartĂĄsban mĂĄst lĂĄt a hr ĂŠs mĂĄst a gazdasĂĄgi ĂźgyintĂŠzĹ)
+
+Az alter ĂŠs a drop parancsok a nĂŠzettĂĄblĂĄk esetĂŠben ugyanĂşgy alkalmazhatĂłak, mint a fizikai tĂĄblĂĄk esetĂŠben.
